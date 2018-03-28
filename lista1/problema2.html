@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problema 2</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://visualizacao-ufpe.github.io/data_vis_assignments/2018.1/datasetProblema2.js"></script>
+</head>
+
+<body>
+    <script>
+        var canvas = d3.select("body").append("svg").attr("width",1200).attr("height",800);
+        var bar1,bar2,bar3,bar4,bar5,bar6,bar7,bar8,bar9,bar10,bar11;
+        
+        //2006
+        bar1 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#fbb4ae")
+        //2007
+        bar2 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#b3cde3")
+                    .attr("x",55)
+        //2008
+        bar3 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#ccebc5")
+                    .attr("x",110)
+        //2009
+        bar4 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#b3cde3")
+                    .attr("x",165)
+        //2010
+        bar5 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#decbe4")
+                    .attr("x",220)
+        //2011
+        bar6 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#ccebc5")
+                    .attr("x",275)
+        //2012
+        bar7 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#fed9a6")
+                    .attr("x",330)
+        //2013
+        bar8 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#ffffcc")
+                    .attr("x",385)
+        //2014
+        bar9 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#e5d8bd")
+                    .attr("x",440)
+        //2015
+        bar10 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#e5d8bd")
+                    .attr("x",495)
+        //2016
+        bar11 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#e5d8bd")
+                    .attr("x",550)
+    </script>
+
+
+</body>
+</html>
