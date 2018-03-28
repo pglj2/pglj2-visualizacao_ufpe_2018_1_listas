@@ -10,39 +10,41 @@
     <script>
         var canvas = d3.select("body").append("svg").attr("width",1200).attr("height",800);
         var bar1,bar2,bar3,bar4,bar5,bar6,bar7,bar8,bar9,bar10,bar11;
-        
+        var nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11;
         //2006
-        bar1 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#fbb4ae")
+        bar1 = canvas.append("rect").attr("width",50).attr("height",dataset[0].books)
+        .attr("fill","#fbb4ae")
+        //nome1 = canvas.append("text").attr("width",100).attr("height",100).attr("fill","white").attr("text","TESTE")
         //2007
-        bar2 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#b3cde3")
-                    .attr("x",55)
+        bar2 = canvas.append("rect").attr("width",50).attr("height",dataset[1].books).attr("fill","#b3cde3")
+                    .attr("x",55).attr("y",(dataset[0].books - dataset[1].books))
         //2008
-        bar3 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#ccebc5")
-                    .attr("x",110)
+        bar3 = canvas.append("rect").attr("width",50).attr("height",dataset[2].books).attr("fill","#ccebc5")
+                    .attr("x",110).attr("y",(dataset[0].books - dataset[2].books))
         //2009
-        bar4 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#b3cde3")
-                    .attr("x",165)
+        bar4 = canvas.append("rect").attr("width",50).attr("height",dataset[3].books).attr("fill","#b3cde3")
+                    .attr("x",165).attr("y",(dataset[0].books - dataset[3].books))
         //2010
-        bar5 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#decbe4")
-                    .attr("x",220)
+        bar5 = canvas.append("rect").attr("width",50).attr("height",dataset[4].books).attr("fill","#decbe4")
+                    .attr("x",220).attr("y",(dataset[0].books - dataset[4].books))
         //2011
-        bar6 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#ccebc5")
-                    .attr("x",275)
+        bar6 = canvas.append("rect").attr("width",50).attr("height",dataset[5].books).attr("fill","#ccebc5")
+                    .attr("x",275).attr("y",(dataset[0].books - dataset[5].books))
         //2012
-        bar7 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#fed9a6")
-                    .attr("x",330)
+        bar7 = canvas.append("rect").attr("width",50).attr("height",dataset[6].books).attr("fill","#fed9a6")
+                    .attr("x",330).attr("y",(dataset[0].books - dataset[6].books))
         //2013
-        bar8 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#ffffcc")
-                    .attr("x",385)
+        bar8 = canvas.append("rect").attr("width",50).attr("height",dataset[7].books).attr("fill","#ffffcc")
+                    .attr("x",385).attr("y",(dataset[0].books - dataset[7].books))
         //2014
-        bar9 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#e5d8bd")
-                    .attr("x",440)
+        bar9 = canvas.append("rect").attr("width",50).attr("height",dataset[8].books).attr("fill","#e5d8bd")
+                    .attr("x",440).attr("y",(dataset[0].books - dataset[8].books))
         //2015
-        bar10 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#e5d8bd")
-                    .attr("x",495)
+        bar10 = canvas.append("rect").attr("width",50).attr("height",dataset[9].books).attr("fill","#e5d8bd")
+                    .attr("x",495).attr("y",(dataset[0].books - dataset[9].books))
         //2016
-        bar11 = canvas.append("rect").attr("width",50).attr("height",300).attr("fill","#e5d8bd")
-                    .attr("x",550)
+        bar11 = canvas.append("rect").attr("width",50).attr("height",dataset[10].books).attr("fill","#e5d8bd")
+                    .attr("x",550).attr("y",(dataset[0].books - dataset[10].books))
     </script>
 
 
