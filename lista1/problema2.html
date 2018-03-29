@@ -7,45 +7,95 @@
 </head>
 
 <body>
+        <script>
+            //Problema 3
+                var highlightYear = function(y){
+                    d3.selectAll("rect").attr("stroke","");
+                    d3.select("rect[id^='"+y+"']").attr("stroke","black").attr("stroke-width",3);     
+                } 
+                      
+          </script>
+    <script>        
+    var books = [dataset[0].books];
+        for(var i = 1; i < dataset.length; i++)
+            books[i] = dataset[i].books;
+    </script>
+    <svg width="1000" height="20">
+        <text x="18" y="20" font-family="sans-serif" font-size="10px" fill="red">54</text>
+        <text x="73" y="20" font-family="sans-serif" font-size="10px" fill="red">43</text>
+        <text x="128" y="20" font-family="sans-serif" font-size="10px" fill="red">41</text>
+        <text x="183" y="20" font-family="sans-serif" font-size="10px" fill="red">44</text>
+        <text x="238" y="20" font-family="sans-serif" font-size="10px" fill="red">35</text>
+        <text x="293" y="20" font-family="sans-serif" font-size="10px" fill="red">14</text>
+        <text x="348" y="20" font-family="sans-serif" font-size="10px" fill="red">10</text>
+        <text x="403" y="20" font-family="sans-serif" font-size="10px" fill="red">11</text>
+        <text x="458" y="20" font-family="sans-serif" font-size="10px" fill="red">5</text>
+        <text x="513" y="20" font-family="sans-serif" font-size="10px" fill="red">20</text>
+        <text x="568" y="20" font-family="sans-serif" font-size="10px" fill="red">35</text>
+    </svg>
     <script>
-        var canvas = d3.select("body").append("svg").attr("width",1200).attr("height",800);
+        var canvas = d3.select("body").append("svg").attr("width",1200).attr("height",54);
         var bar1,bar2,bar3,bar4,bar5,bar6,bar7,bar8,bar9,bar10,bar11;
         var nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11;
         //2006
-        bar1 = canvas.append("rect").attr("width",50).attr("height",dataset[0].books)
-        .attr("fill","#fbb4ae")
-        //nome1 = canvas.append("text").attr("width",100).attr("height",100).attr("fill","white").attr("text","TESTE")
+        bar1 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[0].books)
+        .attr("fill","#fbb4ae").attr("id","2006");
+        //nome1 = canvas.select("g").append("text").attr("width",100).attr("height",100).attr("color","black").attr("text",2).attr("font-size","20px")
         //2007
-        bar2 = canvas.append("rect").attr("width",50).attr("height",dataset[1].books).attr("fill","#b3cde3")
-                    .attr("x",55).attr("y",(dataset[0].books - dataset[1].books))
+        bar2 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[1].books).attr("fill","#b3cde3")
+                    .attr("x",55).attr("y",(dataset[0].books - dataset[1].books)).attr("id","2007")
         //2008
-        bar3 = canvas.append("rect").attr("width",50).attr("height",dataset[2].books).attr("fill","#ccebc5")
-                    .attr("x",110).attr("y",(dataset[0].books - dataset[2].books))
+        bar3 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[2].books).attr("fill","#ccebc5")
+                    .attr("x",110).attr("y",(dataset[0].books - dataset[2].books)).attr("id","2008")
         //2009
-        bar4 = canvas.append("rect").attr("width",50).attr("height",dataset[3].books).attr("fill","#b3cde3")
-                    .attr("x",165).attr("y",(dataset[0].books - dataset[3].books))
+        bar4 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[3].books).attr("fill","#b3cde3")
+                    .attr("x",165).attr("y",(dataset[0].books - dataset[3].books)).attr("id","2009")
         //2010
-        bar5 = canvas.append("rect").attr("width",50).attr("height",dataset[4].books).attr("fill","#decbe4")
-                    .attr("x",220).attr("y",(dataset[0].books - dataset[4].books))
+        bar5 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[4].books).attr("fill","#decbe4")
+                    .attr("x",220).attr("y",(dataset[0].books - dataset[4].books)).attr("id","2010")
         //2011
-        bar6 = canvas.append("rect").attr("width",50).attr("height",dataset[5].books).attr("fill","#ccebc5")
-                    .attr("x",275).attr("y",(dataset[0].books - dataset[5].books))
+        bar6 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[5].books).attr("fill","#ccebc5")
+                    .attr("x",275).attr("y",(dataset[0].books - dataset[5].books)).attr("id","2011")
         //2012
-        bar7 = canvas.append("rect").attr("width",50).attr("height",dataset[6].books).attr("fill","#fed9a6")
-                    .attr("x",330).attr("y",(dataset[0].books - dataset[6].books))
+        bar7 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[6].books).attr("fill","#fed9a6")
+                    .attr("x",330).attr("y",(dataset[0].books - dataset[6].books)).attr("id","2012")
         //2013
-        bar8 = canvas.append("rect").attr("width",50).attr("height",dataset[7].books).attr("fill","#ffffcc")
-                    .attr("x",385).attr("y",(dataset[0].books - dataset[7].books))
+        bar8 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[7].books).attr("fill","#ffffcc")
+                    .attr("x",385).attr("y",(dataset[0].books - dataset[7].books)).attr("id","2013")
         //2014
-        bar9 = canvas.append("rect").attr("width",50).attr("height",dataset[8].books).attr("fill","#e5d8bd")
-                    .attr("x",440).attr("y",(dataset[0].books - dataset[8].books))
+        bar9 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[8].books).attr("fill","#e5d8bd")
+                    .attr("x",440).attr("y",(dataset[0].books - dataset[8].books)).attr("id","2014")
         //2015
-        bar10 = canvas.append("rect").attr("width",50).attr("height",dataset[9].books).attr("fill","#e5d8bd")
-                    .attr("x",495).attr("y",(dataset[0].books - dataset[9].books))
+        bar10 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[9].books).attr("fill","#e5d8bd")
+                    .attr("x",495).attr("y",(dataset[0].books - dataset[9].books)).attr("id","2015")
         //2016
-        bar11 = canvas.append("rect").attr("width",50).attr("height",dataset[10].books).attr("fill","#e5d8bd")
-                    .attr("x",550).attr("y",(dataset[0].books - dataset[10].books))
+        bar11 = canvas.append("g").append("rect").attr("width",50).attr("height",dataset[10].books).attr("fill","#e5d8bd")
+                    .attr("x",550).attr("y",(dataset[0].books - dataset[10].books)).attr("id","2016")
+
     </script>
+
+    <svg width="1000" height="20">
+
+            <text x="16" y="10" font-family="sans-serif" font-size="10px" fill="black">2006</text>
+            <text x="71" y="10" font-family="sans-serif" font-size="10px" fill="black">2007</text>
+            <text x="126" y="10" font-family="sans-serif" font-size="10px" fill="black">2008</text>
+            <text x="181" y="10" font-family="sans-serif" font-size="10px" fill="black">2009</text>
+            <text x="236" y="10" font-family="sans-serif" font-size="10px" fill="black">2010</text>
+            <text x="291" y="10" font-family="sans-serif" font-size="10px" fill="black">2011</text>
+            <text x="346" y="10" font-family="sans-serif" font-size="10px" fill="black">2012</text>
+            <text x="401" y="10" font-family="sans-serif" font-size="10px" fill="black">2013</text>
+            <text x="456" y="10" font-family="sans-serif" font-size="10px" fill="black">2014</text>
+            <text x="511" y="10" font-family="sans-serif" font-size="10px" fill="black">2015</text>
+            <text x="566" y="10" font-family="sans-serif" font-size="10px" fill="black">2016</text>
+    </svg>
+<div id="controls">
+    <br><br>
+    <label for="year">Year:</label>
+    2006
+    <input type="range" id="year" min="2006" max="2016" value="2010"
+       onchange="highlightYear(this.value)">
+    2017
+  </div>
 
 
 </body>
