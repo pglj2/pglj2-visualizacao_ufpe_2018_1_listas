@@ -1,11 +1,16 @@
-var yearArray = ["Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+var temperatureT =[{RecordHigh:34.2, DailyMean:22.1,RecordLow: 11.9,Month:0},
+  {RecordHigh: 34.7,DailyMean:22.4,RecordLow:12.4,Month:1},
+  {RecordHigh:33.5,DailyMean:21.8,RecordLow:12.0,Month:2},
+  {RecordHigh:31.4,DailyMean:19.7,RecordLow:6.8,Month:3},
+  {RecordHigh:29.7,DailyMean:17.4,RecordLow:3.7,Month:4},
+  {RecordHigh:28.6,DailyMean:16.3,RecordLow:4.2,Month:5},
+  {RecordHigh:29.3,DailyMean:15.8,RecordLow:0.8,Month:6},
+  {RecordHigh:33.0, DailyMean:17.1,RecordLow:3.4,Month:7},
+  {RecordHigh:35.2,DailyMean:17.9,RecordLow:3.5,Month:8},
+  {RecordHigh:34.5,DailyMean:19.0,RecordLow:7.0,Month:9},
+  {RecordHigh:34.3, DailyMean:20.2,RecordLow:7.0,Month:10},
+  {RecordHigh:33.5, DailyMean:21.1,RecordLow:10.3,Month:11}]
 
-var temperature ={
-    "RecordHigh":[34.2, 34.7, 33.5, 31.4, 29.7, 28.6, 29.3, 33.0, 35.2, 34.5, 35.3, 33.5],
-    "DailyMean": [22.1, 22.4, 21.8, 19.7, 17.4, 16.3, 15.8, 17.1, 17.9, 19.0, 20.2, 21.1],
-    "RecordLow": [11.9, 12.4, 12.0, 6.8, 3.7, 4.2, 0.8, 3.4, 3.5, 7.0, 7.0, 10.3],
-    "Month": yearArray
-    }
 
 var margin = {top:40,left:40,bottom:20,right:20};
 var totalWidth = 700;
@@ -18,12 +23,11 @@ var svgin = d3.select("body")
     .attr("width", totalWidth)
     .attr("height", totalHeight);
 
-var svg = svgin
-    .append("g")
+var svg = svgin.append("g")
     .attr("transform","translate("+margin.left+","+margin.top+")");
 
 var xScale = d3.scaleTime()
-    .domain([new Date("2017-01-01"), new Date("2018-01-01")])
+    .domain([new Date(2017, 0, 1, 0), new Date(2017,11,1,0)])
     .range([0, width]);
 
 var yScale = d3.scaleLinear()
@@ -57,5 +61,27 @@ yAxis(yAxisGroup);
 yAxisGroup.selectAll(".tick text")
           .attr("x", -15);
 
-var lineGen = d3.line().x(temperature.timeYear)
+var lineGen = d3.line().x(function(d){ return xScale(new Date(2017,d.Month, 1, 0));})
                         .y(function(d){ return yScale(d.DailyMean); });
+
+
+var lineLow = d3.line().x(function(d){ return xScale(new Date(2017,d.Month, 1, 0));})
+                        .y(function(d){ return yScale(d.RecordLow);});
+                     
+var lineTempLow = yGroup.append("path").attr("d", lineLow(temperatureT)).style("stroke","pink").style("fill","none").style("stroke-width",5);
+
+
+var lineHigh = d3.line().x(function(d){ return xScale(new Date(2017,d.Month, 1, 0));})
+                        .y(function(d){ return yScale(d.RecordHigh);});
+                     
+var lineTempHigh = yGroup.append("path").attr("d", lineHigh(temperatureT)).style("stroke","pink").style("fill","none").style("stroke-width",5);
+
+var area = d3.area()      
+  .x(function(d){ return xScale(new Date(2017,d.Month, 1, 0));})
+  .y0(function(d) { return yScale(d.RecordLow);})
+  .y1(function(d) { return yScale(d.RecordHigh);});
+
+var areaBetweenCurves = yGroup.append("path").attr("d", area(temperatureT)).style("fill","pink");
+
+
+var lineTempAvg = yGroup.append("path").attr("d", lineGen(temperatureT)).style("stroke","black").style("fill","none").style("stroke-width",5);
