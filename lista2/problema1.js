@@ -13,8 +13,8 @@ var temperatureT =[{RecordHigh:34.2, DailyMean:22.1,RecordLow: 11.9,Month:0},
 
 
 var margin = {top:40,left:40,bottom:20,right:20};
-var totalWidth = 700;
-var totalHeight = 400;
+var totalWidth = 1000;
+var totalHeight = 500;
 var width = totalWidth - margin.left - margin.right;
 var height = totalHeight - margin.top - margin.bottom;
 
