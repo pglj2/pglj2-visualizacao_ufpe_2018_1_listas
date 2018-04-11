@@ -16,39 +16,21 @@ var svg = d3.select("body").append("svg")
       "translate(" + margin.left + "," + margin.top + ")");
 
 
-function pegarTam(){
+function pegarX(s){
     var x =0 ;
     for(var i = 0; i< trips.length; i++){
-        if(trips[i].carrier == "Tam")
+        if(trips[i].carrier == s)
         x += 1;
     }
 
     return x;
 }
 
-function pegarAzul(){
-    var x =0 ;
-    for(var i = 0; i< trips.length; i++){
-        if(trips[i].carrier == "Azul")
-        x += 1;
-    }
 
-    return x;
-}
 
-function pegarGol(){
-    var x =0 ;
-    for(var i = 0; i< trips.length; i++){
-        if(trips[i].carrier == "Gol")
-        x += 1;
-    }
-
-    return x;
-}
-
-var tam = pegarTam();
-var gol = pegarGol();
-var azul = pegarAzul();
+var tam = pegarX("Tam");
+var gol = pegarX("Gol");
+var azul = pegarX("Azul");
 
 var tripo = [{carrier:"Tam", valor:tam},
 {carrier:"Gol", valor:gol},
