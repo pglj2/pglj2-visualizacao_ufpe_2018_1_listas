@@ -136,6 +136,10 @@ var totalHeight2 = 500;
 var scatterplot = new Scatterplot(container,widgetID,screenX,screenY,totalWidth2,totalHeight2);
 scatterplot.setData(scat);
 
+//QUESTAO 3 a partir daqui//
+var ka = d3.selectAll("circle");
+var k = ka._groups["0"];
+
 
 // var svg2 = d3.select("body").append("svg")
 //       .attr("width", width2 + margin2.left + margin2.right)
